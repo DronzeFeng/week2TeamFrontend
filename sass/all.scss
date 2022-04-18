@@ -1,0 +1,30 @@
+@font-face {
+  font-family: Noto Sans TC;
+  src: url(../fonts/NotoSansTC-Regular.woff);
+  font-weight: normal 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Noto Sans TC;
+  src: url(../fonts/NotoSansTC-Bold.woff);
+  font-weight: bold 700;
+  font-display: swap;
+}
+
+// Global Settings
+$fontFamily: 'Noto Sans TC', Arial, Helvetica, sans-serif;
+$borderBlack: 2px solid #000400;
+$buttonBlue: #03438d;
+$buttonBlack: #000400;
+$buttonYellow: #eec32a;
+$buutonGrey: #a8b0b9;
+$iconBlue: #e2edfa;
+$dateGrey: #9b9893;
+
+body {
+  font-family: $fontFamily;
+  background: transparent url('../dist/img/bg.png') 0% 0% no-repeat padding-box;
+  background-size: 100%;
+  opacity: 1;
+}

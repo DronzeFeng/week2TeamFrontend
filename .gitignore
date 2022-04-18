@@ -1,0 +1,12 @@
+## Folders
+node_modules
+.sass-cache
+
+## SCSS Maps
+*.css.map
+
+## OS
+.DS_Store
+
+## Config
+*.env

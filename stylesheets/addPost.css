@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Noto Sans TC;
+  src: url(../fonts/NotoSansTC-Regular.woff);
+  font-weight: normal 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Noto Sans TC;
+  src: url(../fonts/NotoSansTC-Bold.woff);
+  font-weight: bold 700;
+  font-display: swap;
+}
+body {
+  font-family: "Noto Sans TC", Arial, Helvetica, sans-serif;
+  background: transparent url("../dist/img/bg.png") 0% 0% no-repeat padding-box;
+  background-size: 100%;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=addPost.css.map */
