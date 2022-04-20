@@ -17,4 +17,67 @@ body {
   opacity: 1;
 }
 
+.fontPaytone {
+  font-family: 'Paytone One', sans-serif;
+}
+
+.fontAzeret {
+  font-family: 'Azeret Mono', sans-serif;
+}
+
+.fontColorBlack {
+  color: #000400;
+}
+
+.navUser {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000400;
+}
+
+.profileIcons {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000400;
+  background-color: #e2edfa;
+}
+
+.mt-7 {
+  margin-top: 3rem !important;
+}
+
+.btnBlack {
+  color: #ffffff;
+  background-color: #000400;
+  border: 2px solid #000400;
+  padding: 5px 30px;
+}
+.btnBlack:hover {
+  background-color: #a8b0b9;
+}
+
+.btnGrey {
+  color: #000400;
+  background-color: #a8b0b9;
+  border: 2px solid #000400;
+}
+.btnGrey:hover {
+  background-color: #eec32a;
+}
+
+.btnBlue {
+  color: #ffffff;
+  background-color: #03438d;
+  border: 2px solid #000400;
+}
+
+.shadow-black {
+  -webkit-box-shadow: -1px 2px 0px #000;
+  box-shadow: -1px 2px 0px #000;
+}
+
+.card a {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=addPost.css.map */
