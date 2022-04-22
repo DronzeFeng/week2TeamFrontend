@@ -1,16 +1,5 @@
 @import 'all';
-
-.fontPaytone {
-  font-family: 'Paytone One', sans-serif;
-}
-
-.fontAzeret {
-  font-family: 'Azeret Mono', sans-serif;
-}
-
-.fontColorBlack {
-  color: #000400;
-}
+@import 'style';
 
 .navUser {
   width: 30px;
@@ -23,42 +12,4 @@
   height: 50px;
   border: $borderBlack;
   background-color: $iconBlue;
-}
-
-.mt-7 {
-  margin-top: 3rem !important;
-}
-
-.btnBlack {
-  color: #ffffff;
-  background-color: $buttonBlack;
-  border: $borderBlack;
-  padding: 5px 30px;
-  &:hover {
-    background-color: $buutonGrey;
-  }
-}
-
-.btnGrey {
-  color: #000400;
-  background-color: $buutonGrey;
-  border: $borderBlack;
-  &:hover {
-    background-color: $buttonYellow;
-  }
-}
-
-.btnBlue {
-  color: #ffffff;
-  background-color: $buttonBlue;
-  border: $borderBlack;
-}
-
-.shadow-black {
-  -webkit-box-shadow: -1px 2px 0px #000;
-  box-shadow: -1px 2px 0px #000;
-}
-
-.card a {
-  text-decoration: none;
 }
