@@ -11,8 +11,148 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&amp;family=Baloo+Da+2&amp;family=Noto+Sans+TC:wght@400;700&amp;family=Paytone+One&amp;display=swap"
+    rel="stylesheet"
+    />
     <link href="stylesheets/getPostList.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <section>
+      <nav 
+        id="navbar" 
+        class="navbar navbar-light bg-light bg-white border-bottom border-3 border-dark"
+      >
+        <div class="container px-lg-12">
+          <h1 class="fontPaytone">
+            <a class="navbar-brand fs-1" href="#">MetaWall</a>
+          </h1>
+          <div class="d-flex align-items-center">
+            <img 
+              src="./dist/img/user.png" 
+              alt="user" 
+              class="navUser me-2 img-fluid rounded-circle">
+            <div class="dropdown">
+              <button 
+                class="btn btn-white border-0 text-decoration-underline fw-bolder fontAzeret" 
+                type="button" 
+                id="memberMenu" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+              >
+                Member
+              </button>
+              <ul class="dropdown-menu py-0" aria-labelledby="dropdownMenu2">
+                <li class="border border-dark"><a class="dropdown-item" href="#">我的貼文牆</a></li>
+                <li class="border border-dark"><a class="dropdown-item" href="#">修改個人資料</a></li>
+                <li class="border border-dark"><a class="dropdown-item" href="#">登出</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <section class="container mt-7 px-lg-12">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-4 pe-1 mb-md-2 mb-3">
+              <select id="newPost" class="form-select py-2 border-blod">
+                <option selected>最新貼文</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-8">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control border-blod"
+                  id="keywordInput"
+                  placeholder="搜尋貼文"
+                  aria-label="search"
+                  aria-describedby="btnSearch"
+                />
+                <button
+                  class="btn btnBlue"
+                  type="button"
+                  id="btnSearch"
+                >
+                  <span class="material-icons-outlined"> search </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- start...貼文列表... -->
+          <ul id="postsList" class="ps-0">
+          </ul>
+          <!-- end...貼文列表... -->
+        </div>
+        <div class="col-md-5 d-md-block d-none">
+          <div class="border border-dark border-2 px-4 py-5 bg-white">
+            <div class="d-grid gap-2 mb-4">
+              <button
+                type="submit"
+                class="btn btnBlue shadow-black rounded-3 btn-primary"
+                onclick="goAddPostPage()"
+              >
+                張貼動態
+              </button>
+            </div>
+            <ul class="ps-0">
+              <li class="card h-100 border-0 mb-4">
+                <a href="#">
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="mx-3 img-fluid"
+                      src="./dist/img/user.png"
+                      alt="user1"
+                    />
+                    <p class="mt-2 fw-bold">邊緣小杰</p>
+                  </div>
+                </a>
+              </li>
+              <li class="card h-100 border-0 mb-4">
+                <a href="#">
+                  <div class="media d-flex align-items-center">
+                    <div
+                      class="rounded-circle border border-dark p-2 mx-3 bg-light hover-primary"
+                    >
+                      <span class="material-icons-outlined">
+                        notifications
+                      </span>
+                    </div>
+                    <p class="mt-2 fw-bold">追蹤名單</p>
+                  </div>
+                </a>
+              </li>
+              <li class="card h-100 border-0">
+                <a href="#">
+                  <div class="media d-flex align-items-center">
+                    <div
+                      class="rounded-circle border border-dark p-2 mx-3 bg-light hover-primary"
+                    >
+                      <span class="material-icons material-icons-outlined">
+                        thumb_up
+                      </span>
+                    </div>
+                    <p class="mt-2 fw-bold">我按讚的文章</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script src="./config.js"></script>
+    <script src="./all.js"></script>
+  </body>
 </html>
