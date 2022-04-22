@@ -16,7 +16,8 @@ function getPostsList() {
             `${baseUrl}`
         )
         .then( response => {
-            postData = response.data;
+            postData = response.data.data;
+            // console.log(postData);
             renderPostsList(postData);
         })
 }
@@ -41,26 +42,32 @@ function noPostDataHTML(info) {
 
 //將取得的貼文組成HTML格式
 function combinePostHTMLItem(item) {
-    console.log(item);
-    let userImage = "./dist/img/default_user.png";  // 使用者預設圖示
+    // console.log(item);
+    let userName = item.user_name;    //使用者名稱
+    let userImage = item.user_image;  // 使用者頭像
+    let contentMessage = item.content_message;   //留言區-內容
+    let contentImage = item.content_image;   //留言區-圖片
+    let createdAt = item.created_at.slice(0, 16).replace('-', '/').replace('-', '/').replace('T', ' ');   //發文日期: 將資料庫ISO string時間格式 轉成 yyyy/mm/dd  hh:mm 
     let userImageInfo = "default-user";  //使用者圖片預設資訊
-    let contentImage = ""; //內容圖片，預設為空
-    if(item.userImage.startsWith('https') == true){
-        userImage = item.userImage;
+    if(userImage.startsWith('https') !== true){  //無使用者頭像
+        userImage = "./dist/img/default_user.png";  // 使用者預設圖示
+    }else{
         userImageInfo = 'user-upload-image';
     }
-    if(item.contentImage.startsWith('https') == true){
-        contentImage = item.contentImage;
+
+    if(contentImage.startsWith('https') !== true){  //無留言區-圖片
+        contentImage = ""; //內容圖片，預設url為空字串
     }
+
     return `<li class="card h-100 py-4 px-4 mb-3 border-blod shadow-black">
         <div class="d-flex align-items-center mb-3">
         <img class="me-3 img-fluid user-image" src="${userImage}" alt="${userImageInfo}" />
         <div class="d-flex flex-column mt-2">
-            <a href="#" class="mb-0 fw-bold">${item.userName}</a>
-            <small class="text-muted">${item.createdAt}</small>
+            <a href="#" class="mb-0 fw-bold">${userName}</a>
+            <small class="text-muted">${createdAt}</small>
         </div>
         </div>
-        <p>${item.contentMessage}</p>
+        <p>${contentMessage}</p>
         <img src="${contentImage}" alt="" class="img-fluid" />
     </li>`;
 }
@@ -85,7 +92,7 @@ btnSearch.addEventListener("click", (e) => {
     if (queryKeyword !== '') {
         let str = '';
         postData.forEach((item) => {
-            if (item.userContent.indexOf(queryKeyword) >= 0) {
+            if (item.content_message.indexOf(queryKeyword) >= 0) {
                 str += combinePostHTMLItem(item);
             }
         });
